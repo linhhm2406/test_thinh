@@ -6,9 +6,10 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name="categories")
+@Table(name="category")
 @Data
 public class Category {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -17,7 +18,7 @@ public class Category {
     private String name;
 
     @NotNull(message = "tag's name must be fill")
-    @Column(unique = true)
+    @Column(unique = true, name = "category_tag")
     private String tag;
 
 }

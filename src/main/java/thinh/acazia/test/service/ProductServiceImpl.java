@@ -5,7 +5,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import thinh.acazia.test.model.Product;
+import thinh.acazia.test.model.Products;
 import thinh.acazia.test.repository.ProductRepository;
+import thinh.acazia.test.repository.ProductsRepository;
 
 import java.util.Optional;
 
@@ -14,9 +16,17 @@ public class ProductServiceImpl implements ProductService {
     @Autowired
     private ProductRepository productRepository;
 
+    @Autowired
+    private ProductsRepository productsRepository;
+
     @Override
     public Page<Product> findALL(Pageable pageable) {
         return productRepository.findAll(pageable);
+    }
+
+    @Override
+    public Page<Products> findAll(Pageable pageable) {
+        return productsRepository.findAll(pageable);
     }
 
     @Override

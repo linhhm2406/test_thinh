@@ -3,16 +3,19 @@ package thinh.acazia.test.service;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import thinh.acazia.test.model.Product;
+import thinh.acazia.test.model.Products;
 
 import java.util.Optional;
 
 public interface ProductService {
-    Page<Product> findALL(Pageable pageable);
+  Page<Product> findALL(Pageable pageable);
 
-    Optional<Product> findById(Long id);
+  Page<Products> findAll(Pageable pageable);
 
-    void save(Product product);
+  Optional<Product> findById(Long id);
 
-    void remove(Long  id);
+  void save(Product product);
+
+  void remove(Long id);
 
 }

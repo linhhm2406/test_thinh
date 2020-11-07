@@ -8,7 +8,7 @@ import javax.validation.constraints.Positive;
 
 @Entity
 @Data
-@Table(name = "products")
+@Table(name = "product")
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,8 +23,8 @@ public class Product {
     @Positive
     private double price;
 
-    @ManyToOne
-    @JoinColumn(name = "category_id")
+    @ManyToOne (targetEntity = Category.class)
+    @JoinColumn(name = "category_tag")
     private Category category;
 
 }
